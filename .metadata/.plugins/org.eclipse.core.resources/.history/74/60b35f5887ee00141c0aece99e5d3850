@@ -56,7 +56,7 @@ public class DaoFacturas {
 
 	public void consultarFacturacion(ObjectContainer conexion) {
 		// TODO Auto-generated method stub	
-		System.err.println("\n\n Consultar Facturacion");
+		System.err.println("Consultar Facturacion");
 		ObjectSet coleccion = conexion.queryByExample(new Factura());
 		if(coleccion.isEmpty()){
 			System.out.println("No existen Facturas");
@@ -68,7 +68,8 @@ public class DaoFacturas {
 				System.out.println("Id Factura : "+factura.getIdFactura());
 				System.out.println("Fecha de registro :"+factura.getFecha());
 				ArrayList<Ticket> lista = factura.getLista();
-				for ( Ticket ticket : lista) {		
+				for ( Ticket ticket : lista) {					
+                    System.out.println("Ticket : ");
                     System.out.println("Id Ticket: " + ticket.getIdticket());
                     System.out.println("Total : " + ticket.getTotal());
 				}

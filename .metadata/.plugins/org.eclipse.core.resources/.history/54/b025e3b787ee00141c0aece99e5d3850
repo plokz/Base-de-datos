@@ -68,7 +68,8 @@ public class DaoFacturas {
 				System.out.println("Id Factura : "+factura.getIdFactura());
 				System.out.println("Fecha de registro :"+factura.getFecha());
 				ArrayList<Ticket> lista = factura.getLista();
-				for ( Ticket ticket : lista) {		
+				for ( Ticket ticket : lista) {					
+                    System.out.println("Ticket : ");
                     System.out.println("Id Ticket: " + ticket.getIdticket());
                     System.out.println("Total : " + ticket.getTotal());
 				}
