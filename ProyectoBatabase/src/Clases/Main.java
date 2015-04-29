@@ -33,6 +33,7 @@ public class Main   {
 				case 1:
 					int opc=0;
 					while (opc!= 5){
+						System.out.println("\n\n");
 						System.out.println("1.-Agregar Producto");
 						System.out.println("2.-Eliminar Producto");
 						System.out.println("3.-Modificar Producto");
@@ -66,6 +67,7 @@ public class Main   {
 					}			
 					break;
 				case 2:					
+					System.out.println("\n\n");
 					System.out.println("1.-Realizar Compra");
 					System.out.println("2.-Consulta Tickets");
 					System.out.println("Elija una opcion -> ");
@@ -86,6 +88,7 @@ public class Main   {
 					break;
 					
 				case 3:
+					System.out.println("\n\n");
 					System.out.println("1.- Facturar ");
 					System.out.println("2.- Imprimir Facturas");
 					opc = lector.nextInt();

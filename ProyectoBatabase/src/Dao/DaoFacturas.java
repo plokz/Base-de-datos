@@ -49,6 +49,7 @@ public class DaoFacturas {
 		factura.setCliente(cliente_id);
 		conexion.store(factura);
 		System.err.println("Facturacion Realizada");
+		System.out.println("\n\n");
 	}
 
 
@@ -75,6 +76,7 @@ public class DaoFacturas {
 				num++;
 			}
 		}
+		System.out.println("\n\n");
 	}
 	
 	
@@ -93,13 +95,6 @@ public class DaoFacturas {
 	}
 
 
-	
-	
-	
-	
-	
-	
-	
 
 	public static int numero(){
 		Scanner lector =  new Scanner(System.in );		

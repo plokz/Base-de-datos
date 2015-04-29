@@ -51,6 +51,7 @@ public class DaoTickets {
 		ticket.setTotal(sumatotal);
 		conexion.store(ticket);
 		System.err.println("Venta Realizada");
+		System.out.println("\n\n");
 	}
 
 
@@ -79,6 +80,7 @@ public class DaoTickets {
 				num++;
 			}
 		}
+		System.out.println("\n\n");
 	}
 
 	public static ArrayList<Ticket> consultaEspecifica(ObjectContainer conexion){
