@@ -23,22 +23,23 @@ public class Main   {
 		int opcion = 0;
 		try {
 			while (opcion != 5){
+				System.out.println("\n");
 				System.out.println("1.- Productos ");
 				System.out.println("2.- Compra ");
 				System.out.println("3.- Facturar");
-				System.out.println("5.-Regresar ");
+				System.out.println("5.- Salir ");
 				System.out.print("Elija Una opcion -> ");
 				opcion = lector.nextInt();
 				switch (opcion){
 				case 1:
 					int opc=0;
 					while (opc!= 5){
-						System.out.println("\n\n");
+						System.out.println("\n");
 						System.out.println("1.-Agregar Producto");
 						System.out.println("2.-Eliminar Producto");
 						System.out.println("3.-Modificar Producto");
 						System.out.println("4.-Consultar Producto");
-						System.out.println("5.-Regresar");
+						System.out.println("5.-Regresar al menu");
 						System.out.print("Elija Una opcion -> ");
 						opc = lector.nextInt();
 						switch(opc){
@@ -59,7 +60,8 @@ public class Main   {
 							producto.consultarProducto(conexion);
 							break;
 						case 5:
-							System.out.println("Adios");
+							System.out.println("Regresando al menu");		
+							break;
 							default :
 								System.out.println("No ah elegido ninguna opcion");		
 								break;
@@ -67,7 +69,7 @@ public class Main   {
 					}			
 					break;
 				case 2:					
-					System.out.println("\n\n");
+					System.out.println("\n");
 					System.out.println("1.-Realizar Compra");
 					System.out.println("2.-Consulta Tickets");
 					System.out.println("Elija una opcion -> ");
@@ -88,9 +90,10 @@ public class Main   {
 					break;
 					
 				case 3:
-					System.out.println("\n\n");
+					System.out.println("\n");
 					System.out.println("1.- Facturar ");
 					System.out.println("2.- Imprimir Facturas");
+					System.out.println("Elija una opcion -> ");
 					opc = lector.nextInt();
 					switch (opc){
 					case 1:
@@ -106,8 +109,9 @@ public class Main   {
 							break;
 					}	
 					break;
-				case 4:
+				
 					default:
+						System.out.println("Saliendo....");
 						break;
 				}
 			}		

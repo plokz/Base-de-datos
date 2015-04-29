@@ -16,6 +16,7 @@ public class DaoFacturas {
 	
 
 	public void crearFacturas (ObjectContainer conexion){
+		System.out.print("\n ");	
 		Factura factura =  new Factura();
 		System.out.print("ID Factura -> ");	
 		factura.setIdFactura(numero());
@@ -26,7 +27,7 @@ public class DaoFacturas {
 		DaoTickets daoaccesorios = new DaoTickets();
 		do{
 			System.out.println("1.-ID cliente ");
-			System.out.println("2.-Salir ");
+			System.out.println("2.-Regresar al menu ");
 			System.out.print("Elige una opcion -> ");
 			opc = numero();
 			switch (opc){
@@ -35,7 +36,7 @@ public class DaoFacturas {
 				lista = daoaccesorios.consultaEspecifica(conexion);				
 				break;
 			case 2:
-				System.out.print("Adios");
+				System.out.print("Regresando al menu");
 				break;
 				default:
 					System.out.print("Ninguna Opcion seleccionada");
@@ -49,13 +50,13 @@ public class DaoFacturas {
 		factura.setCliente(cliente_id);
 		conexion.store(factura);
 		System.err.println("Facturacion Realizada");
-		System.out.println("\n\n");
+		System.out.println("\n");
 	}
 
 
 	public void consultarFacturacion(ObjectContainer conexion) {
 		// TODO Auto-generated method stub	
-		System.out.println("Consultar Facturacion");
+		System.err.println("Consultar Facturacion");
 		ObjectSet coleccion = conexion.queryByExample(new Factura());
 		if(coleccion.isEmpty()){
 			System.out.println("No existen Facturas");
@@ -64,7 +65,7 @@ public class DaoFacturas {
 			while(coleccion.hasNext()){
 				Factura factura = (Factura) coleccion.next();
 				System.out.println("Factura numero -> "+(num+1));
-				System.out.print("Id Factura : "+factura.getIdFactura());
+				System.out.println("Id Factura : "+factura.getIdFactura());
 				System.out.println("Fecha de registro :"+factura.getFecha());
 				ArrayList<Ticket> lista = factura.getLista();
 				for ( Ticket ticket : lista) {					
@@ -74,6 +75,7 @@ public class DaoFacturas {
 				}
 				System.out.println("Id Cliente  ------- > :"+factura.getCliente());
 				num++;
+				System.out.println("");
 			}
 		}
 		System.out.println("\n\n");

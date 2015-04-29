@@ -15,6 +15,7 @@ import com.db4o.query.Query;
 public class DaoTickets {
 	
 	public void crearTicket (ObjectContainer conexion){
+		System.out.println("\n");
 		Ticket ticket =  new Ticket();
 		System.out.print("ID ticket -> ");	
 		ticket.setIdticket(numero());
@@ -37,7 +38,7 @@ public class DaoTickets {
 				lista.add(daoaccesorios.consultaEspecifica(conexion));
 				break;
 			case 2:
-				System.out.print("Adios");
+				System.out.print("Regresnado al menu");
 				break;
 				default:
 					System.out.print("Ninguna Opcion seleccionada");
@@ -51,22 +52,23 @@ public class DaoTickets {
 		ticket.setTotal(sumatotal);
 		conexion.store(ticket);
 		System.err.println("Venta Realizada");
-		System.out.println("\n\n");
+		System.out.println("\n");
 	}
 
 
 	public void consultarTickets(ObjectContainer conexion) {
 		// TODO Auto-generated method stub	
-		System.out.println("Consultar Productos");
+		System.out.println("\n");
+		System.err.println("Consultar tickets");
 		ObjectSet coleccion = conexion.queryByExample(new Ticket());
 		if(coleccion.isEmpty()){
-			System.out.println("No existen Productos");
+			System.out.println("No existen tickets");
 		}else{
 			int num = 0;
 			while(coleccion.hasNext()){
 				Ticket ticket = (Ticket) coleccion.next();
 				System.out.println("Ticket numero -> "+(num+1));
-				System.out.print("Id Ticket : "+ticket.getIdticket());
+				System.out.println("Id Ticket : "+ticket.getIdticket());
 				System.out.println("Fecha de registro :"+ticket.getFecha());
 				System.out.println("ID Cliente :"+ticket.getIdcliente());
 				ArrayList<ProductosAccesorios> lista = ticket.getLista();
@@ -78,9 +80,9 @@ public class DaoTickets {
 				}
 				System.out.println("Total ------- > :"+ticket.getTotal());
 				num++;
+				System.out.println("\n");
 			}
 		}
-		System.out.println("\n\n");
 	}
 
 	public static ArrayList<Ticket> consultaEspecifica(ObjectContainer conexion){

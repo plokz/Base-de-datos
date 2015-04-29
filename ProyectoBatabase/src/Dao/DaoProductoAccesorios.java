@@ -26,7 +26,6 @@ public class DaoProductoAccesorios implements Interfaces {
 		producto.setFechaResgistro(obtenerFecha());
 		conexion.store(producto);
 		System.err.println("Producto Agregado Correctamente");
-		System.out.println("\n\n");
 	}
 
 	@Override
@@ -38,13 +37,12 @@ public class DaoProductoAccesorios implements Interfaces {
 			System.out.println("No existe el alumno verifique sus datos");
 		}else{
 			ProductosAccesorios producto = (ProductosAccesorios) eliminar.next();
-			System.out.println(producto);
+
 			System.out.println("Numero: "+producto.getIdproductoAccesorios());
 			System.out.println("Nombre: "+producto.getNombre());
 			conexion.delete(producto);
 			System.err.println("Producto Eliminado");
 		}
-		System.out.println("\n\n");
 	}
 
 	@Override
@@ -57,7 +55,7 @@ public class DaoProductoAccesorios implements Interfaces {
 			System.out.println("Verifique sus datos");
 		}else{
 			ProductosAccesorios producto = (ProductosAccesorios) modificar.next();
-			System.out.println(producto);
+
 			System.out.println("Numero: "+producto.getNombre());
 			System.out.println("Descripcion: "+producto.getDescripcion());
 			System.out.println("Costo Publico : "+producto.getCostoPublico());
@@ -75,12 +73,12 @@ public class DaoProductoAccesorios implements Interfaces {
 			producto.setFechaResgistro(obtenerFecha());
 			conexion.store(producto);
 		}
-		System.out.println("\n\n");
 	}
 
 	@Override
 	public void consultarProducto(ObjectContainer conexion) {
 		// TODO Auto-generated method stub	
+		System.err.println("\n");
 		System.err.println("Consultar Productos");
 		ObjectSet coleccion = conexion.queryByExample(new ProductosAccesorios());
 		if(coleccion.isEmpty()){
@@ -94,8 +92,8 @@ public class DaoProductoAccesorios implements Interfaces {
 				System.out.println("Descripcion : "+producto.getDescripcion());
 				System.out.println("Costo Publico : "+producto.getCostoPublico());
 				System.out.println("Fecha Resgistro : "+producto.getFechaResgistro());
+				System.out.println("\n");
 			}
-			System.out.println("\n\n");
 		}
 	}
 	
